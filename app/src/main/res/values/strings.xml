@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ReceiptWidget</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">A barcode widget for mobile receipt</string>
+    <string name="barcodetext">barcodetext</string>
+    <string name="barcodeimage">barcodeImage</string>
+    <string name="enter_mobile_receipt_barcode">Enter Mobile Receipt Barcode</string>
+</resources>
