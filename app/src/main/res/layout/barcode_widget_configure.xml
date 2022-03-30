@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -16,14 +17,31 @@
         android:id="@+id/appwidget_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:inputType="text"
-        android:autofillHints="" />
+        android:minHeight="48dp"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
-    <Button
-        android:id="@+id/add_button"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/warningmsg"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/add_widget" />
+        android:text="@string/not_a_valid_receipt_barcode"
+        android:textColor="#FF0000"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/add_widget" />
+    </LinearLayout>
 
 </LinearLayout>

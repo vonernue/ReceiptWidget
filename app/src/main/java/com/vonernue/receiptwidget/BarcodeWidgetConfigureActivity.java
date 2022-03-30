@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.EditText;
 
 import com.vonernue.receiptwidget.databinding.BarcodeWidgetConfigureBinding;
@@ -26,17 +27,24 @@ public class BarcodeWidgetConfigureActivity extends Activity {
 
             // When the button is clicked, store the string locally
             String widgetText = mAppWidgetText.getText().toString();
-            saveTitlePref(context, mAppWidgetId, widgetText);
+            TextView warningmsg = (TextView) findViewById(R.id.warningmsg);
+            widgetText = widgetText.trim();
+            if(widgetText.isEmpty() || !widgetText.matches("/[a-zA-Z0-9+-.]{7}")) {
+                warningmsg.setVisibility(View.VISIBLE);
+            }else {
+                widgetText = widgetText.toUpperCase();
+                saveTitlePref(context, mAppWidgetId, widgetText);
 
-            // It is the responsibility of the configuration activity to update the app widget
-            AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
-            BarcodeWidget.updateAppWidget(context, appWidgetManager, mAppWidgetId);
+                // It is the responsibility of the configuration activity to update the app widget
+                AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
+                BarcodeWidget.updateAppWidget(context, appWidgetManager, mAppWidgetId);
 
-            // Make sure we pass back the original appWidgetId
-            Intent resultValue = new Intent();
-            resultValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, mAppWidgetId);
-            setResult(RESULT_OK, resultValue);
-            finish();
+                // Make sure we pass back the original appWidgetId
+                Intent resultValue = new Intent();
+                resultValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, mAppWidgetId);
+                setResult(RESULT_OK, resultValue);
+                finish();
+            }
         }
     };
     private BarcodeWidgetConfigureBinding binding;

@@ -9,4 +9,5 @@
     <string name="enter_mobile_receipt_barcode">Enter Mobile Receipt Barcode</string>
     <string name="create_a_widget_to_use_this_app">Create a widget to use this app!</string>
     <string name="example">example</string>
+    <string name="not_a_valid_receipt_barcode">Not a valid receipt barcode!</string>
 </resources>
