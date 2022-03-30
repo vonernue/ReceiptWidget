@@ -7,4 +7,6 @@
     <string name="barcodetext">barcodetext</string>
     <string name="barcodeimage">barcodeImage</string>
     <string name="enter_mobile_receipt_barcode">Enter Mobile Receipt Barcode</string>
+    <string name="create_a_widget_to_use_this_app">Create a widget to use this app!</string>
+    <string name="example">example</string>
 </resources>
