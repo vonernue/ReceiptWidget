@@ -43,7 +43,7 @@ public class BarcodeWidget extends AppWidgetProvider {
             Bitmap bitmap = Bitmap.createBitmap(bitMatrix.getWidth(), bitMatrix.getHeight(), Bitmap.Config.ARGB_8888);
             for (int i = 0; i < bitMatrix.getWidth(); i++) {
                 for (int j = 0; j < bitMatrix.getHeight(); j++) {
-                    bitmap.setPixel(i, j, bitMatrix.get(i, j) ? ContextCompat.getColor(context, color.system_accent2_100) : ContextCompat.getColor(context, color.system_neutral2_800));
+                    bitmap.setPixel(i, j, bitMatrix.get(i, j) ? ContextCompat.getColor(context, color.system_neutral2_800) : ContextCompat.getColor(context, color.system_accent2_100));
                 }
             }
             views.setBitmap(R.id.barcodeImage, "setImageBitmap", bitmap);
